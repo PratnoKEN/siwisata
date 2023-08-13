@@ -36,18 +36,6 @@ $routes->get('dashboard', 'Admin\DashboardController::index');
 
 // routes produk
 $routes->get('daftar-produk', 'Admin\ProdukController::index');
-$routes->get('tambah-produk', 'Admin\ProdukController::add');
-
-// routes hotel
-$routes->get('daftar-hotel', 'Admin\HotelController::index');
-$routes->get('tambah-hotel', 'Admin\HotelController::add');
-
-// routes transportasi
-$routes->get('daftar-transportasi', 'Admin\TransportasiController::index');
-$routes->get('tambah-transportasi', 'Admin\TransportasiController::add');
-
-// routes bookings
-$routes->get('daftar-bookings', 'Admin\BookingsController::index');
 
 /*
  * --------------------------------------------------------------------

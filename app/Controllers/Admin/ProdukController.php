@@ -13,12 +13,4 @@ class ProdukController extends BaseController
         ];
         return view('admin/produk/index', $data);
     }
-
-    public function add()
-    {
-        $data = [
-            'title' => 'Tambah Destinasi'
-        ];
-        return view('admin/produk/add', $data);
-    }
 }
