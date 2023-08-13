@@ -19,7 +19,7 @@
                 <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne"
                     data-bs-parent="#sidenavAccordion">
                     <nav class="sb-sidenav-menu-nested nav">
-                        <a class="nav-link" href="#">Tambah Wisata</a>
+                        <a class="nav-link" href="<?= base_url('tambah-produk'); ?>">Tambah Wisata</a>
                         <a class="nav-link" href="<?= base_url('daftar-produk'); ?>">Daftar Wisata</a>
                     </nav>
                 </div>
@@ -33,8 +33,8 @@
                 <div class="collapse" id="collapsePenginapan" aria-labelledby="headingOne"
                     data-bs-parent="#sidenavAccordion">
                     <nav class="sb-sidenav-menu-nested nav">
-                        <a class="nav-link" href="#">Tambah Penginapan</a>
-                        <a class="nav-link" href="#">Daftar Penginapan</a>
+                        <a class="nav-link" href="<?= base_url('tambah-hotel'); ?>">Tambah Penginapan</a>
+                        <a class="nav-link" href="<?= base_url('daftar-hotel'); ?>">Daftar Penginapan</a>
                     </nav>
                 </div>
 
@@ -47,8 +47,8 @@
                 <div class="collapse" id="collapseTransportasi" aria-labelledby="headingOne"
                     data-bs-parent="#sidenavAccordion">
                     <nav class="sb-sidenav-menu-nested nav">
-                        <a class="nav-link" href="#">Tambah Transportasi</a>
-                        <a class="nav-link" href="#">Daftar Transportasi</a>
+                        <a class="nav-link" href="<?= base_url('tambah-transportasi'); ?>">Tambah Transportasi</a>
+                        <a class="nav-link" href="<?= base_url('daftar-transportasi'); ?>">Daftar Transportasi</a>
                     </nav>
                 </div>
 
