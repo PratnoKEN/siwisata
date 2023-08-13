@@ -4,21 +4,21 @@ namespace App\Controllers\Admin;
 
 use App\Controllers\BaseController;
 
-class ProdukController extends BaseController
+class HotelController extends BaseController
 {
     public function index()
     {
         $data = [
-            'title' => 'Daftar Produk'
+            'title' => 'Daftar Hotel'
         ];
-        return view('admin/produk/index', $data);
+        return view('admin/hotel/index', $data);
     }
 
     public function add()
     {
         $data = [
-            'title' => 'Tambah Destinasi'
+            'title' => 'Tambah Hotel'
         ];
-        return view('admin/produk/add', $data);
+        return view('admin/hotel/add', $data);
     }
 }
