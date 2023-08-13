@@ -1,7 +1,7 @@
 # SI PARIWISATA
 
 ### REQUIREMENT
-- php.ini extention ;extension=intl || hapus tanda titik dua
+- php.ini extention ";extension=intl" || hapus tanda titik koma
 
 ### NAMA KELOMPOK
 - 202011420056 Wistu Ari wibowo
