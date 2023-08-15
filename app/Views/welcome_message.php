@@ -71,14 +71,14 @@
                     </div>
                     <div class="" style="background-color: #FFF">
                         <hr class="my-0 ">
-                        <p class="post mx-3 mt-2 mb-0 "><i class="fa-solid fa-location-dot fa-sm"></i> Batu, Jawa Timur</p>
-                        <h6 class="post-title mx-3 mt-2 mb-0 ">Jatim Park 1</h6>
+                        <p class="post mx-3 mt-2 mb-0 "><i class="text-primary fa-solid fa-location-dot fa-sm"></i> Batu, Jawa Timur</p>
+                        <h6 class="post-title mx-3 mt-2 mb-2 ">Jatim Park 1</h6>
                         <hr class="m-0">
                         <div class="row">
                             <div class="col">
                                 <p class="text-success ms-3 my-2 me-lg-4">Rp.100.000</p>
                             </div>
-                            <div class="col">
+                            <div class="col text-end me-3">
                                 <i class="fa-solid fa-star fa-sm my-3  text-warning"></i>
                                 <i class="fa-solid fa-star fa-sm my-3  text-warning"></i>
                                 <i class="fa-solid fa-star fa-sm my-3  text-warning"></i>
@@ -96,20 +96,20 @@
                     </div>
                     <div class="" style="background-color: #FFF">
                         <hr class="my-0 ">
-                        <p class="post mx-3 mt-2 mb-0 "><i class="fa-solid fa-location-dot fa-sm"></i> Batu, Jawa Timur</p>
-                        <h6 class="post-title mx-3 mt-2 mb-0 ">Jatim Park 2</h6>
+                        <p class="post mx-3 mt-2 mb-0 "><i class="text-primary  fa-solid fa-location-dot fa-sm"></i> Batu, Jawa Timur</p>
+                        <h6 class="post-title mx-3 mt-2 mb-2 ">Jatim Park 2</h6>
                         <hr class="m-0">
                         <div class="row">
                             <div class="col">
                                 <p class="text-success ms-3 my-2 me-lg-4">Rp.100.000</p>
                             </div>
 
-                            <div class="col">
+                            <div class="col text-end me-3">
                                 <i class="fa-solid fa-star fa-sm my-3  text-warning"></i>
                                 <i class="fa-solid fa-star fa-sm my-3  text-warning"></i>
                                 <i class="fa-solid fa-star fa-sm my-3  text-warning"></i>
                                 <i class="fa-solid fa-star fa-sm my-3  text-warning"></i>
-                                <i class="fa-solid fa-star fa-sm my-3  text-warning"></i>
+                                <i class="fa-solid fa-star fa-sm my-3  text-scondary"></i>
                             </div>
                         </div>
                     </div>
@@ -122,15 +122,15 @@
                     </div>
                     <div class="" style="background-color: #FFF">
                         <hr class="my-0 ">
-                        <p class="post mx-3 mt-2 mb-0 "><i class="fa-solid fa-location-dot fa-sm"></i> Surabaya, Jawa Timur</p>
-                        <h6 class="post-title mx-3 mt-2 mb-0 ">Kebun Binatang</h6>
+                        <p class="post mx-3 mt-2 mb-0 "><i class="text-primary fa-solid fa-location-dot fa-sm"></i> Surabaya, Jawa Timur</p>
+                        <h6 class="post-title mx-3 mt-2 mb-2 ">Kebun Binatang</h6>
                         <hr class="m-0">
                         <div class="row">
                             <div class="col">
                                 <p class="text-success ms-3 my-2 me-lg-4">Rp.100.000</p>
                             </div>
 
-                            <div class="col">
+                            <div class="col text-end me-3">
                                 <i class="fa-solid fa-star fa-sm my-3  text-warning"></i>
                                 <i class="fa-solid fa-star fa-sm my-3  text-warning"></i>
                                 <i class="fa-solid fa-star fa-sm my-3  text-warning"></i>
@@ -157,19 +157,19 @@
                     </div>
                     <div class="" style="background-color: #FFF">
                         <hr class="my-0 ">
-                        <p class="post mx-3 mt-2 mb-0 "><i class="fa-solid fa-location-dot fa-sm"></i> Surabaya, Jawa Timur</p>
-                        <h6 class="post-title mx-3 mt-2 mb-0 ">Wyndham Hotel</h6>
+                        <p class="post mx-3 mt-2 mb-0 "><i class="text-primary fa-solid fa-location-dot fa-sm"></i> Surabaya, Jawa Timur</p>
+                        <h6 class="post-title mx-3 mt-2 mb-2 ">Wyndham Hotel</h6>
                         <hr class="m-0">
                         <div class="row">
                             <div class="col">
                                 <p class="text-success ms-3 my-2 me-lg-4">Rp.100.000</p>
                             </div>
-                            <div class="col">
+                            <div class="col text-end me-3">
                                 <i class="fa-solid fa-star fa-sm my-3  text-warning"></i>
                                 <i class="fa-solid fa-star fa-sm my-3  text-warning"></i>
                                 <i class="fa-solid fa-star fa-sm my-3  text-warning"></i>
                                 <i class="fa-solid fa-star fa-sm my-3  text-warning"></i>
-                                <i class="fa-solid fa-star fa-sm my-3  text-warning"></i>
+                                <i class="fa-solid fa-star fa-sm my-3  text-scondary"></i>
                             </div>
                         </div>
                     </div>
@@ -182,15 +182,15 @@
                     </div>
                     <div class="" style="background-color: #FFF">
                         <hr class="my-0 ">
-                        <p class="post mx-3 mt-2 mb-0 "><i class="fa-solid fa-location-dot fa-sm"></i> Surabaya, Jawa Timur</p>
-                        <h6 class="post-title mx-3 mt-2 mb-0 ">Veerwod Hotel</h6>
+                        <p class="post mx-3 mt-2 mb-0 "><i class="text-primary fa-solid fa-location-dot fa-sm"></i> Surabaya, Jawa Timur</p>
+                        <h6 class="post-title mx-3 mt-2 mb-2 ">Veerwod Hotel</h6>
                         <hr class="m-0">
                         <div class="row">
                             <div class="col">
                                 <p class="text-success ms-3 my-2 me-lg-4">Rp.100.000</p>
                             </div>
 
-                            <div class="col">
+                            <div class="col text-end me-3">
                                 <i class="fa-solid fa-star fa-sm my-3  text-warning"></i>
                                 <i class="fa-solid fa-star fa-sm my-3  text-warning"></i>
                                 <i class="fa-solid fa-star fa-sm my-3  text-warning"></i>
@@ -208,20 +208,20 @@
                     </div>
                     <div class="" style="background-color: #FFF">
                         <hr class="my-0 ">
-                        <p class="post mx-3 mt-2 mb-0 "><i class="fa-solid fa-location-dot fa-sm"></i> Surabaya, Jawa Timur</p>
-                        <h6 class="post-title mx-3 mt-2 mb-0 ">Maxone Hotel</h6>
+                        <p class="post mx-3 mt-2 mb-0 "><i class="text-primary fa-solid fa-location-dot fa-sm"></i> Surabaya, Jawa Timur</p>
+                        <h6 class="post-title mx-3 mt-2 mb-2 ">Maxone Hotel</h6>
                         <hr class="m-0">
                         <div class="row">
                             <div class="col">
                                 <p class="text-success ms-3 my-2 me-lg-4">Rp.100.000</p>
                             </div>
 
-                            <div class="col">
+                            <div class="col text-end me-3">
                                 <i class="fa-solid fa-star fa-sm my-3  text-warning"></i>
                                 <i class="fa-solid fa-star fa-sm my-3  text-warning"></i>
                                 <i class="fa-solid fa-star fa-sm my-3  text-warning"></i>
                                 <i class="fa-solid fa-star fa-sm my-3  text-warning"></i>
-                                <i class="fa-solid fa-star fa-sm my-3  text-warning"></i>
+                                <i class="fa-solid fa-star fa-sm my-3  text-scondary"></i>
                             </div>
                         </div>
                     </div>
