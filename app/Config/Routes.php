@@ -46,6 +46,10 @@ $routes->get('tambah-hotel', 'Admin\HotelController::add');
 $routes->get('daftar-transportasi', 'Admin\TransportasiController::index');
 $routes->get('tambah-transportasi', 'Admin\TransportasiController::add');
 
+// Change the route definition to accept both GET and POST requests
+$routes->match(['get', 'post'], 'login', 'Admin\Auth::login');
+$routes->get('logout', 'Admin\Auth::logout');
+
 /*
  * --------------------------------------------------------------------
  * Additional Routing

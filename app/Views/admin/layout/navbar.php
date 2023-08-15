@@ -56,7 +56,10 @@
         </div>
         <div class="sb-sidenav-footer">
             <div class="small">Logged in as:</div>
-            Start Bootstrap
+            <?php if (session()->has('username')): ?>
+                <?= session('username') ?>
+            <?php endif; ?>
         </div>
+
     </nav>
 </div>
