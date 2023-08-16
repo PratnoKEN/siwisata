@@ -10791,6 +10791,19 @@ header.masthead .post-heading .meta a {
 .post-preview > .post-meta > a {
   text-decoration: none;
 }
+.smaller-font {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+.smaller-font ul {
+  padding-left: 0;
+  list-style: none; /* Remove bullet points */
+}
+.smaller-font li {
+  margin-bottom: 5px;
+  padding-left: 20px; /* Adjust the left padding as needed */
+  text-indent: -20px; /* Counteract the padding with negative text indent */
+}
 @media (min-width: 992px) {
   .post-preview > a > .post-title {
     font-size: 2.25rem;
