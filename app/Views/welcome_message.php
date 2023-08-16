@@ -11,11 +11,8 @@
     <!-- Font Awesome icons (free version)-->
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
     <!-- Google fonts-->
-    <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet"
-        type="text/css" />
-    <link
-        href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800"
-        rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css" />
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="css/styles.css" rel="stylesheet" />
     <style>
@@ -30,8 +27,7 @@
     <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
         <div class="container px-4 px-lg-5">
             <a class="navbar-brand" href="<?= base_url('/'); ?>">Pariwisata</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
-                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 Menu
                 <i class="fas fa-bars"></i>
             </button>
@@ -43,8 +39,7 @@
                     <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="#penginapan">Penginapan</a></li>
                     <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="#transportasi">Transportasi</a>
                     </li>
-                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4"
-                            href="<?= base_url('login'); ?>">Login</a></li>
+                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="<?= base_url('login'); ?>">Login</a></li>
                 </ul>
             </div>
         </div>
@@ -128,8 +123,7 @@
             <div class="col-md-4 mt-3 justify-content-center">
                 <div class="card shadow-sm">
                     <div class="card-body m-3 p-0 rounded">
-                        <img src="<?php echo base_url() . '/assets/img/j1.jpg' ?>" width="100%" height="200px"
-                            alt="thumbnail">
+                        <img src="<?php echo base_url() . '/assets/img/j1.jpg' ?>" width="100%" height="200px" alt="thumbnail">
                     </div>
                     <div class="" style="background-color: #FFF">
                         <hr class="my-0 ">
@@ -155,8 +149,7 @@
             <div class="col-md-4 mt-3 justify-content-center">
                 <div class="card shadow-sm">
                     <div class="card-body m-3 p-0 rounded">
-                        <img src="<?php echo base_url() . '/assets/img/j2.jpg' ?>" width="100%" height="200px"
-                            alt="thumbnail">
+                        <img src="<?php echo base_url() . '/assets/img/j2.jpg' ?>" width="100%" height="200px" alt="thumbnail">
                     </div>
                     <div class="" style="background-color: #FFF">
                         <hr class="my-0 ">
@@ -183,8 +176,7 @@
             <div class="col-md-4 mt-3 justify-content-center">
                 <div class="card shadow-sm">
                     <div class="card-body m-3 p-0 rounded">
-                        <img src="<?php echo base_url() . '/assets/img/j3.jpg' ?>" width="100%" height="200px"
-                            alt="thumbnail">
+                        <img src="<?php echo base_url() . '/assets/img/j3.jpg' ?>" width="100%" height="200px" alt="thumbnail">
                     </div>
                     <div class="" style="background-color: #FFF">
                         <hr class="my-0 ">
@@ -220,11 +212,11 @@
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
         <script>
-            document.addEventListener("DOMContentLoaded", function () {
+            document.addEventListener("DOMContentLoaded", function() {
                 const ticketForm = document.getElementById("ticketForm");
                 const ticketPriceElement = document.getElementById("ticketPrice");
 
-                ticketForm.addEventListener("submit", function (event) {
+                ticketForm.addEventListener("submit", function(event) {
                     event.preventDefault();
 
                     const initialDestination = document.getElementById("initialDestination").value;
@@ -253,56 +245,60 @@
             });
         </script>
         <script>
-            document.addEventListener("DOMContentLoaded", function () {
+            document.addEventListener("DOMContentLoaded", function() {
                 const productCards = document.querySelectorAll(".card.shadow-sm");
 
                 const hotels = {
-                    "Jatim Park 1": [
-                        {
+                    "Jatim Park 1": [{
                             name: "Hotel Dewi",
                             description: "A comfortable hotel near Jatim Park 1",
                             price: "Rp. 250,000",
-                            specifications: "WiFi, Breakfast, Parking"
+                            specifications: "WiFi, Breakfast, Parking",
+                            image: "oyo"
                         },
                         {
                             name: "OYO 3398 Griya RM 19",
                             description: "Affordable accommodation with great service",
                             price: "Rp. 150,000",
-                            specifications: "WiFi, Air Conditioning"
+                            specifications: "WiFi, Air Conditioning",
+                            image: "oyo"
                         },
                         {
                             name: "OYO 2042 Zam Zam Family Syariah",
                             description: "Family-friendly hotel with a peaceful atmosphere",
                             price: "Rp. 180,000",
-                            specifications: "WiFi, Family Rooms"
+                            specifications: "WiFi, Family Rooms",
+                            image: "oyo"
                         }
                     ],
-                    "Jatim Park 2": [
-                        {
+                    "Jatim Park 2": [{
                             name: "RedDoorz near Eco Green Park Batu",
                             description: "Conveniently located near Jatim Park 2",
                             price: "Rp. 300,000",
-                            specifications: "WiFi, Swimming Pool"
+                            specifications: "WiFi, Swimming Pool",
+                            image: "oyo"
                         },
                         {
                             name: "GUEST HOUSE PALEM ASRI",
                             description: "Homestay with a natural atmosphere",
                             price: "Rp. 200,000",
-                            specifications: "Garden, Parking"
+                            specifications: "Garden, Parking",
+                            image: "oyo"
                         },
                         {
                             name: "Griya Sumber Rejeki Homestay",
                             description: "Cozy homestay with friendly hosts",
                             price: "Rp. 180,000",
-                            specifications: "WiFi, Terrace"
+                            specifications: "WiFi, Terrace",
+                            image: "oyo"
                         }
                     ],
-                    "Kebun Binatang": [
-                        {
+                    "Kebun Binatang": [{
                             name: "Andalus Hotel",
                             description: "Modern hotel near Kebun Binatang",
                             price: "Rp. 300,000",
-                            specifications: "WiFi, Restaurant, Gym"
+                            specifications: "WiFi, Restaurant, Gym",
+                            image: "oyo"
                         },
                         {
                             name: "SPOT ON 90403 Gosepa Ngagel",
@@ -321,6 +317,75 @@
                     ]
                 };
 
+                const biss = {
+                    "Jatim Park 1": [{
+                            name: "Bus Gandeng Scania",
+                            description: "Bus yang melayani rute antarkota di Indonesia, khususnya di Malang",
+                            price: "Rp. 250,000",
+                            specifications: "AC, Tempat duduk yang nyaman, Layar hiburan",
+                            image: "b1"
+                        },
+                        {
+                            name: "Bus Hino",
+                            description: "Bus yang melayani rute antarkota di Indonesia, khususnya di Malang",
+                            price: "Rp. 150,000",
+                            specifications: "WiFi, AC, Tempat duduk yang nyaman, Layar hiburan",
+                            image: "b2"
+                        },
+                        {
+                            name: "Bus Mercedez-Ben",
+                            description: "Bus yang melayani rute antarkota di Indonesia, khususnya di Malang",
+                            price: "Rp. 180,000",
+                            specifications: "WiFi, AC, Tempat duduk yang nyaman, Layar hiburan",
+                            image: "b3"
+                        }
+                    ],
+                    "Jatim Park 2": [{
+                            name: "Bus Sinar Jaya",
+                            description: "Bus yang melayani rute antarkota di Indonesia, khususnya di Malang",
+                            price: "Rp. 300,000",
+                            specifications: "WiFi, AC, Tempat duduk yang nyaman, Layar hiburan",
+                            image: "b1"
+                        },
+                        {
+                            name: "Bus Haryanto",
+                            description: "Bus yang melayani rute antarkota di Indonesia, khususnya di Malang",
+                            price: "Rp. 200,000",
+                            specifications: "AC, Tempat duduk yang nyaman, Layar hiburan",
+                            image: "b2"
+                        },
+                        {
+                            name: "Bus Damri",
+                            description: "Bus yang melayani rute antarkota di Indonesia, khususnya di Malang",
+                            price: "Rp. 180,000",
+                            specifications: "WiFi, AC, Tempat duduk yang nyaman, Layar hiburan",
+                            image: "b2"
+                        }
+                    ],
+                    "Kebun Binatang": [{
+                            name: "Bus Mayasari Bakti",
+                            description: "Bus yang melayani rute antarkota di Indonesia, khususnya di Surabaya",
+                            price: "Rp. 300,000",
+                            specifications: "AC, Tempat duduk yang nyaman, Layar hiburan",
+                            image: "b1"
+                        },
+                        {
+                            name: "Bus Pahala Kencana",
+                            description: "Bus yang melayani rute antarkota di Indonesia, khususnya di Surabaya",
+                            price: "Rp. 150,000",
+                            specifications: "AC, Tempat duduk yang nyaman, Layar hiburan",
+                            image: "b2"
+                        },
+                        {
+                            name: "Bus Putra Pelangi",
+                            description: "Bus yang melayani rute antarkota di Indonesia, khususnya di Surabaya",
+                            price: "Rp. 220,000",
+                            specifications: "AC, Tempat duduk yang ergonomis, Hiburan, Colokan listrik.",
+                            image: "b3"
+                        }
+                    ]
+                };
+
                 productCards.forEach((card, index) => {
                     card.addEventListener("click", () => {
                         const cardTitle = card.querySelector(".post-title").textContent;
@@ -328,6 +393,8 @@
 
                         const selectedFinalDestination = cardTitle;
                         const recommendedHotels = hotels[selectedFinalDestination];
+
+                        const recommendedBiss = biss[selectedFinalDestination];
 
                         const hotelCards = recommendedHotels.map(hotel => `
 
@@ -343,7 +410,23 @@
       </div>
 </div>
 
-`).join('');
+`).join('<p class="m-1"></p>');
+
+                        //bis
+                        const bisCards = recommendedBiss.map(bis => `
+<div class="card" style="width: 18rem;">
+<div class="row g-0">
+    <img class="" width="100%" height="200px"  src="<?php echo base_url() . '/assets/img/' ?>${bis.image}.jpg" alt="${bis.name}">
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">${bis.name}</h5>
+        <p class="card-text">${bis.description}</p>
+        <p class="card-text text-success">${bis.price}</p>
+        <p class="card-text">${bis.specifications}</p>
+      </div>
+</div>
+
+`).join('<p class="m-1"></p>');
 
                         const modalContent = `
                         <div class="modal-header">
@@ -368,6 +451,15 @@
     </div>
   </div>
 </div>
+<hr class="my-2">
+        <h6 class="mt-2">Recommended Bus:</h6>
+<div class="row">
+  <div class="col-sm-12">
+    <div class="card-container d-flex flex-nowrap">
+      ${bisCards}
+    </div>
+  </div>
+</div>
       </div>
     </div>
   </div>
@@ -384,7 +476,6 @@
                     });
                 });
             });
-
         </script>
 </body>
 
