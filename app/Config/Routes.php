@@ -36,7 +36,9 @@ $routes->get('dashboard', 'Admin\DashboardController::index');
 
 // routes produk
 $routes->get('daftar-produk', 'Admin\ProdukController::index');
-$routes->get('tambah-produk', 'Admin\ProdukController::add');
+$routes->match(['get', 'post'], 'tambah-produk', 'Admin\ProdukController::add');
+$routes->match(['get', 'post'], 'edit-produk/(:num)', 'Admin\ProdukController::edit/$1');
+$routes->get('delete-produk/(:segment)', 'Admin\ProdukController::delete/$1');
 
 // routes hotel
 $routes->get('daftar-hotel', 'Admin\HotelController::index');
