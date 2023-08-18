@@ -3,6 +3,7 @@
 namespace App\Controllers\Admin;
 
 use App\Controllers\BaseController;
+use App\Models\HotelModel;
 
 class HotelController extends BaseController
 {
@@ -13,8 +14,11 @@ class HotelController extends BaseController
             // Redirect to the login page if not logged in
             return redirect()->to('/login');
         }
+
+        $HotelModel = new HotelModel();
         $data = [
-            'title' => 'Daftar Hotel'
+            'title' => 'Daftar Hotel',
+            'hotel' => $HotelModel->getAllHotel(),
         ];
         return view('admin/hotel/index', $data);
     }

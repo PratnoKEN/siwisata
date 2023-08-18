@@ -11,7 +11,7 @@
                     Daftar Hotel
                     <ol class="breadcrumb mb-4">
                         <li class="breadcrumb-item"><a href="<?= base_url('dashboard'); ?>">Dashboard</a></li>
-                        <li class="breadcrumb-item active">Static Navigation</li>
+                        <li class="breadcrumb-item active">Daftar Hotel</li>
                     </ol>
                 </div>
                 <div class="card-body">
@@ -21,55 +21,26 @@
                                 <th>Nama Hotel</th>
                                 <th>Tempat</th>
                                 <th>Harga Tiket</th>
-                                <th>Action</th>
+                                <th>Deskripsi</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>POP Hotel</td>
-                                <td>Surabaya - Jawa Timur</td>
-                                <td>Rp.15.000</td>
-                                <td style="white-space:nowrap;">
-                                    <a class="btn btn-success btn-sm" href="#"><i class="fa fa-edit"></i></a>
-                                    <a class="btn btn-danger btn-sm" href="#"><i class="fa-solid fa-trash-can"></i></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Zest Hotel</td>
-                                <td>Surabaya - Jawa Timur</td>
-                                <td>Rp.100.000</td>
-                                <td style="white-space:nowrap;">
-                                    <a class="btn btn-success btn-sm" href="#"><i class="fa fa-edit"></i></a>
-                                    <a class="btn btn-danger btn-sm" href="#"><i class="fa-solid fa-trash-can"></i></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Haris Hotel</td>
-                                <td>Surabaya - Jawa Timur</td>
-                                <td>Rp.100.000</td>
-                                <td style="white-space:nowrap;">
-                                    <a class="btn btn-success btn-sm" href="#"><i class="fa fa-edit"></i></a>
-                                    <a class="btn btn-danger btn-sm" href="#"><i class="fa-solid fa-trash-can"></i></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Santika Hotel</td>
-                                <td>Surabaya - Jawa Timur</td>
-                                <td>Rp.100.000</td>
-                                <td style="white-space:nowrap;">
-                                    <a class="btn btn-success btn-sm" href="#"><i class="fa fa-edit"></i></a>
-                                    <a class="btn btn-danger btn-sm" href="#"><i class="fa-solid fa-trash-can"></i></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Ary Hotel</td>
-                                <td>Surabaya - Jawa Timur</td>
-                                <td>Rp.15.000</td>
-                                <td style="white-space:nowrap;">
-                                    <a class="btn btn-success btn-sm" href="#"><i class="fa fa-edit"></i></a>
-                                    <a class="btn btn-danger btn-sm" href="#"><i class="fa-solid fa-trash-can"></i></a>
-                                </td>
-                            </tr>
+                            <?php foreach ($hotel as $item): ?>
+                                <tr>
+                                    <td>
+                                        <?= $item['nama_penginapan'] ?>
+                                    </td>
+                                    <td>
+                                        <?= $item['lokasi'] ?>
+                                    </td>
+                                    <td>Rp.
+                                        <?= number_format($item['price'], 0, ',', '.') ?>
+                                    </td>
+                                    <td>
+                                        <?= $item['deskripsi'] ?>
+                                    </td>
+                                </tr>
+                            <?php endforeach; ?>
                         </tbody>
                     </table>
                 </div>

@@ -15,26 +15,26 @@
                     </ol>
                 </div>
                 <div class="card-body">
-                    <form>
+                    <form action="<?= site_url('tambah-produk'); ?>" method="post" enctype="multipart/form-data">
                         <div class="mb-3">
                             <label for="" class="form-label">Nama Wisata</label>
-                            <input type="text" class="form-control" id="">
+                            <input type="text" class="form-control" name="nama_wisata">
                         </div>
                         <div class="mb-3">
-                            <label for="" class="form-label">Tempat</label>
-                            <input type="text" class="form-control" id="">
+                            <label for="" class="form-label">Lokasi</label>
+                            <input type="text" class="form-control" name="lokasi">
                         </div>
                         <div class="mb-3">
                             <label for="" class="form-label">Harga</label>
-                            <input type="text" class="form-control" id="">
+                            <input type="text" class="form-control" name="price">
                         </div>
                         <div class="mb-3">
                             <label for="exampleFormControlTextarea1" class="form-label">Deskripsi</label>
-                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                            <textarea class="form-control" name="deskripsi" rows="3"></textarea>
                         </div>
                         <div class="mb-3">
                             <label for="" class="form-label">Image</label>
-                            <input type="file" class="form-control" id="">
+                            <input type="file" class="form-control" name="gambar_wisata">
                         </div>
                         <button type="submit" class="btn btn-primary">Save</button>
                     </form>
@@ -42,7 +42,5 @@
             </div>
         </div>
     </main>
-
-
 
     <?= $this->endSection() ?>
