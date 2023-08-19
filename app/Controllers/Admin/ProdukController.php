@@ -25,10 +25,9 @@ class ProdukController extends BaseController
 
     public function add()
     {
-        // Check if user is logged in
-        if (!session()->get('logged_in') || session('level') !== 'admin') {
-            // Show a "Page Not Found" error
-            throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound();
+        if (!session()->get('logged_in')) {
+            // Redirect to the login page if not logged in
+            return redirect()->to('/login');
         }
 
         // Load the model
