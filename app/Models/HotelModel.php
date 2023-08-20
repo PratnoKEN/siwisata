@@ -13,4 +13,9 @@ class HotelModel extends Model
     {
         return $this->findAll();
     }
+    public function deleteHotel($id)
+    {
+        // Perform the deletion based on the given ID
+        $this->where('id_penginapan', $id)->delete();
+    }
 }

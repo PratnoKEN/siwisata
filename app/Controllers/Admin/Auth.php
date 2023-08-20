@@ -3,6 +3,7 @@
 namespace App\Controllers\Admin;
 
 use App\Controllers\BaseController;
+use App\Models\UserModel;
 
 class Auth extends BaseController
 {
@@ -13,20 +14,23 @@ class Auth extends BaseController
             $username = $this->request->getPost('username');
             $password = $this->request->getPost('password');
 
-            // Define valid username and password
-            $validUsername = 'Hanafi';
-            $validPassword = '123';
+            $userModel = new UserModel();
+            $user = $userModel->where('username', $username)->orWhere('email', $username)->first();
 
-            // Check if the entered credentials match the valid values
-            if ($username === $validUsername && $password === $validPassword) {
+            if ($user && password_verify($password, $user['password'])) {
                 session()->set('logged_in', true);
-                // After successful authentication
-                session()->set('username', $validUsername); // Assuming $validUsername is the username
+                session()->set('username', $user['username']);
+                session()->set('level', $user['level']);
 
-                return redirect()->to('/dashboard'); // Redirect to the dashboard or another page
+                // Redirect based on user level
+                if ($user['level'] === 'admin') {
+                    return redirect()->to('/dashboard');
+                } else {
+                    return redirect()->to('');
+                }
             } else {
                 // Set an error flash message
-                session()->setFlashdata('error', 'Username/Password Salah');
+                session()->setFlashdata('error', 'Username/Email or Password Incorrect');
 
                 // Redirect back to the login page
                 return redirect()->to('/login');
@@ -43,6 +47,6 @@ class Auth extends BaseController
         session()->destroy();
 
         // Redirect to the login page
-        return redirect()->to('/login');
+        return redirect()->to('');
     }
 }

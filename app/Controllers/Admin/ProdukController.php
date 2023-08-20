@@ -7,12 +7,13 @@ use App\Models\ProdukModel;
 
 class ProdukController extends BaseController
 {
+
     public function index()
     {
         // Check if user is logged in
-        if (!session()->get('logged_in')) {
-            // Redirect to the login page if not logged in
-            return redirect()->to('/login');
+        if (!session()->get('logged_in') || session('level') !== 'admin') {
+            // Show a "Page Not Found" error
+            throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound();
         }
 
         $produkModel = new ProdukModel(); // Create an instance of the model
@@ -25,6 +26,7 @@ class ProdukController extends BaseController
 
     public function add()
     {
+        // Check if user is logged in
         if (!session()->get('logged_in')) {
             // Redirect to the login page if not logged in
             return redirect()->to('/login');
@@ -66,9 +68,9 @@ class ProdukController extends BaseController
     public function edit($id)
     {
         // Check if user is logged in
-        if (!session()->get('logged_in')) {
-            // Redirect to the login page if not logged in
-            return redirect()->to('/login');
+        if (!session()->get('logged_in') || session('level') !== 'admin') {
+            // Show a "Page Not Found" error
+            throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound();
         }
 
         // Load the model
@@ -84,9 +86,17 @@ class ProdukController extends BaseController
                 'lokasi' => $this->request->getPost('lokasi'),
                 'price' => $this->request->getPost('price'),
                 'deskripsi' => $this->request->getPost('deskripsi'),
-                'gambar' => $this->request->getPost('gambar'),
-                // You'll need to process the image upload here and store its path
+                // Process the image upload and store its path
             ];
+
+            // Handle file upload
+            $imageFile = $this->request->getFile('gambar_wisata');
+            if ($imageFile->isValid() && !$imageFile->hasMoved()) {
+                $newImageName = $imageFile->getRandomName();
+                $imageFile->move('./assets/img', $newImageName);
+
+                $data['gambar'] = $newImageName;
+            }
 
             // Update the product data in the database
             $produkModel->update($id, $data);
@@ -94,6 +104,8 @@ class ProdukController extends BaseController
             // Redirect back to the product list page
             return redirect()->to('/daftar-produk')->with('success', 'Data berhasil diperbarui');
         }
+
+        // Retrieve product data again
         $productData = $produkModel->find($id);
         $data = [
             'title' => 'Edit Destinasi',
@@ -102,12 +114,13 @@ class ProdukController extends BaseController
         return view('admin/produk/edit', $data);
     }
 
+
     public function delete($id)
     {
         // Check if user is logged in
-        if (!session()->get('logged_in')) {
-            // Redirect to the login page if not logged in
-            return redirect()->to('/login');
+        if (!session()->get('logged_in') || session('level') !== 'admin') {
+            // Show a "Page Not Found" error
+            throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound();
         }
 
         // Load the model
