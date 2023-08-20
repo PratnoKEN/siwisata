@@ -52,39 +52,39 @@
 
 <body class="row justify-content-center">
     <div class="col-md-3">
-        <div class="card shadow-sm">
-            <main class="form-signin">
-                <form method="post" action="<?= site_url('login') ?>">
-                    <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
-                    <?php if (session()->has('error')): ?>
-                        <div class="alert alert-danger" role="alert">
-                            <?= session('error') ?>
-                        </div>
-                    <?php endif; ?>
-                    <div class="form-floating">
-                        <input type="text" name="username" class="form-control mb-3" id="floatingInput"
-                            placeholder="Username" required>
-                    </div>
-                    <div class="form-floating">
-                        <input type="password" name="password" class="form-control" id="floatingPassword"
-                            placeholder="Password" required>
-                    </div>
+    <div class="card shadow-sm">
+    <main class="form-signin">
+        <form method="post" action="<?= site_url('login') ?>">
+            <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+            <?php if (session()->has('error')): ?>
+                <div class="alert alert-danger" role="alert">
+                    <?= session('error') ?>
+                </div>
+            <?php endif; ?>
+            <div class="form-floating">
+                <input type="text" name="username" class="form-control mb-3" id="floatingInput" placeholder="Username"
+                    required>
+            </div>
+            <div class="form-floating">
+                <input type="password" name="password" class="form-control" id="floatingPassword" placeholder="Password"
+                    required>
+            </div>
 
-                    <div class="checkbox mb-3">
-                        <label>
-                            <input type="checkbox" name="remember" value="1"> Remember me
-                        </label>
-                    </div>
-                    <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
-                    <p class="text-center mt-5 mb-3 text-muted">&copy;
-                        <?= date('Y') ?>
-                    </p>
-                </form>
-            </main>
-        </div>
+            <div class="checkbox mb-3">
+                <label>
+                    <input type="checkbox" name="remember" value="1"> Remember me
+                </label>
+            </div>
+            <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
+            <p class="text-center mt-5 mb-3 text-muted">&copy;
+                <?= date('Y') ?>
+            </p>
+        </form>
+    </main>
     </div>
-
-
+    </div>
+    
+    
 </body>
 
 

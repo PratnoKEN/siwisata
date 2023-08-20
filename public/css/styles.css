@@ -10804,9 +10804,6 @@ header.masthead .post-heading .meta a {
   padding-left: 20px; /* Adjust the left padding as needed */
   text-indent: -20px; /* Counteract the padding with negative text indent */
 }
-.card {
-  cursor: pointer;
-}
 @media (min-width: 992px) {
   .post-preview > a > .post-title {
     font-size: 2.25rem;

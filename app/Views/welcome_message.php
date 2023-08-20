@@ -11,17 +11,12 @@
     <!-- Font Awesome icons (free version)-->
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
     <!-- Google fonts-->
-    <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet"
-        type="text/css" />
-    <link
-        href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800"
-        rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css" />
     <!-- Core theme CSS (includes Bootstrap)-->
     <!-- Link to Bootstrap JS and jQuery (required for Bootstrap components) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
     <link href="css/styles.css" rel="stylesheet" />
@@ -32,8 +27,7 @@
     <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
         <div class="container px-4 px-lg-5">
             <a class="navbar-brand" href="<?= base_url('/'); ?>">Pariwisata</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
-                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 Menu
                 <i class="fas fa-bars"></i>
             </button>
@@ -45,43 +39,38 @@
                     <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="#penginapan">Penginapan</a></li>
                     <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="#transportasi">Transportasi</a>
                     </li>
-                    <?php if (session()->get('logged_in')): ?>
-                        <?php if (session('level') === 'admin'): ?>
-                            <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4"
-                                    href="<?= base_url('dashboard'); ?>">Dashboard</a></li>
+                    <?php if (session()->get('logged_in')) : ?>
+                        <?php if (session('level') === 'admin') : ?>
                             <li class="nav-item dropdown mt-3">
-                                <a class="nav-link dropdown-toggle align-top" href="#" id="navbarDropdown" role="button"
-                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <i class="fas fa-user"></i> Admin,
-                                    <?php if (session()->has('username')): ?>
+                                <a class="nav-link dropdown-toggle align-top" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="fas fa-user"></i> Hi,
+                                    <?php if (session()->has('username')) : ?>
                                         <?= session('username') ?>
                                     <?php endif; ?>
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="<?= base_url('dashboard'); ?>">Dashboard</a>
                                     <a class="dropdown-item" href="<?= base_url('logout'); ?>">Logout</a>
                                 </div>
                             </li>
                         <?php endif; ?>
-                        <?php if (session('level') === 'user'): ?>
-                            <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4"
-                                    href="<?= base_url('dashboard-user'); ?>">Dashboard</a></li>
+                        <?php if (session('level') === 'user') : ?>
                             <li class="nav-item dropdown mt-3">
-                                <a class="nav-link dropdown-toggle align-top" href="#" id="navbarDropdown" role="button"
-                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <i class="fas fa-user"></i> Halo,
-                                    <?php if (session()->has('username')): ?>
+                                <a class="nav-link dropdown-toggle align-top" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="fas fa-user"></i> Hi,
+                                    <?php if (session()->has('username')) : ?>
                                         <?= session('username') ?>
                                     <?php endif; ?>
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="<?= base_url('dashboard-user'); ?>">Dashboard</a>
                                     <a class="dropdown-item" href="<?= base_url('logout'); ?>">Logout</a>
                                 </div>
                             </li>
                         <?php endif; ?>
 
-                    <?php else: ?>
-                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4"
-                                href="<?= base_url('login'); ?>">Login</a></li>
+                    <?php else : ?>
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="<?= base_url('login'); ?>">Login</a></li>
                     <?php endif; ?>
                 </ul>
             </div>
@@ -93,8 +82,7 @@
             <div class="row gx-4 gx-lg-5 justify-content-center">
                 <div class="col-md-10 col-lg-8 col-xl-7">
                     <div class="site-heading">
-                        <h4 class="typewrite" data-period="2000"
-                            data-type='[ "Jelajahi Tempat Wisata Kami", "Butuh Tempat Penginapan Yang Nyaman?.", "Transportasi yang terjangkau" ]'>
+                        <h4 class="typewrite" data-period="2000" data-type='[ "Jelajahi Tempat Wisata Kami", "Butuh Tempat Penginapan Yang Nyaman?.", "Transportasi yang terjangkau" ]'>
                             <span class="wrap"></span>
                         </h4>
                     </div>
@@ -113,7 +101,7 @@
                         <label for="initialDestination" class="form-label">Dari</label>
                         <select class="form-select" id="initialDestination" required>
                             <option value="" disabled selected>Pilih Tujuan Awal</option>
-                            <?php foreach ($transport as $item): ?>
+                            <?php foreach ($transport as $item) : ?>
                                 <option value="<?= $item['tujuan_awal'] ?>"><?= $item['tujuan_awal'] ?></option>
                             <?php endforeach; ?>
                         </select>
@@ -127,7 +115,7 @@
                         <label for="finalDestination" class="form-label">Ke</label>
                         <select class="form-select" id="finalDestination" required>
                             <option value="" disabled selected>Pilih Tujuan Akhir</option>
-                            <?php foreach ($transport as $item): ?>
+                            <?php foreach ($transport as $item) : ?>
                                 <option value="<?= $item['tujuan_akhir'] ?>"><?= $item['tujuan_akhir'] ?></option>
                             <?php endforeach; ?>
                         </select>
@@ -156,12 +144,11 @@
             </div>
         </div>
         <div class="row justify-content-center">
-            <?php foreach ($produk as $item): ?>
+            <?php foreach ($produk as $item) : ?>
                 <div class="col-md-4 mt-3 justify-content-center">
                     <div class="card shadow-sm">
                         <div class="card-body m-3 p-0 rounded">
-                            <img src="<?= base_url('assets/img/' . $item['gambar']) ?>" width="100%" height="200px"
-                                alt="<?= $item['nama_wisata'] ?>" width="100">
+                            <img src="<?= base_url('assets/img/' . $item['gambar']) ?>" width="100%" height="200px" alt="<?= $item['nama_wisata'] ?>" width="100">
                         </div>
                         <div class="" style="background-color: #FFF">
                             <hr class="my-0 ">
@@ -186,6 +173,134 @@
                                     <i class="fa-solid fa-star fa-sm my-3  text-warning"></i>
                                 </div>
                             </div>
+                            <div class="row">
+                                <div class="col mx-3 text-end mb-3 ">
+                                    <button type="button" class="btn btn-info btn-sm edit-btn form-control" data-bs-toggle="modal" data-bs-target="#Detail<?= $item['id_wisata']; ?>">
+                                        Lihat <i class="fas fa-eye"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Modal for showing details -->
+                <div class="modal fade" id="Detail<?= $item['id_wisata']; ?>" tabindex="-1" aria-labelledby="DetailLabel<?= $item['id_wisata']; ?>" aria-hidden="true">
+                    <div class="modal-dialog modal-fullscreen">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="DetailLabel<?= $item['id_wisata']; ?>">Detail
+                                </h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <!-- Content for the modal -->
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="row">
+                                            <div class="col-md-5">
+                                                <img class="form-control m-0" src="<?= base_url('assets/img/' . $item['gambar']) ?>" alt="<?= $item['nama_wisata'] ?>" width="100">
+                                                <p class="m-0 p-0">Rating(5)</p>
+                                                <div class=" me-3 m-0 p-0">
+                                                    <i class="fa-solid fa-star fa-sm my-3  text-warning"></i>
+                                                    <i class="fa-solid fa-star fa-sm my-3  text-warning"></i>
+                                                    <i class="fa-solid fa-star fa-sm my-3  text-warning"></i>
+                                                    <i class="fa-solid fa-star fa-sm my-3  text-warning"></i>
+                                                    <i class="fa-solid fa-star fa-sm my-3  text-warning "></i>
+                                                </div>
+                                                <hr class="m-0 p-0 ">
+                                                <div class="row">
+                                                    <div class="col text-success">
+                                                        <p><strong><i class="fas fa-eye"></i></strong> Rp.
+                                                            <?= number_format($item['price'], 0, ',', '.') ?>
+                                                        </p>
+                                                    </div>
+                                                    <div class="col mt-4">
+                                                        <button type="button" class="btn btn-warning btn-sm edit-btn form-control" data-bs-toggle="modal" data-bs-target="#Detail<?= $item['id_wisata']; ?>">
+                                                            Book Now
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-7">
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <h4>
+                                                            <?= $item['nama_wisata'] ?>
+                                                        </h4>
+                                                        <hr class="m-0">
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <p class="m-0 p-0 ">
+                                                            <smole>lokasi:</smole>
+                                                            <?= $item['lokasi'] ?>
+                                                        </p>
+                                                        <p class="m-0 p-0"><strong>Deskripsi:</strong></p>
+                                                        <p class="m-0 p-0"><?= $item['deskripsi'] ?></p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+
+                                </div>
+                                <!-- rekomendasi hotel -->
+
+                                <div class="container">
+                                    <div class="row text-center">
+                                        <div class="col">
+                                            <hr>
+                                            <h3 id="penginapan">Rekomendasi Hotel</h1>
+                                                <hr>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="row justify-content-center">
+                                            <?php foreach ($hotel as $item) : ?>
+                                                <div class="col-md-4 mt-3 justify-content-center">
+                                                    <div class="card shadow-sm">
+                                                        <div class="card-body m-3 p-0 rounded">
+                                                            <img src="<?= base_url('assets/img/' . $item['gambar']) ?>" width="100%" height="200px" alt="<?= $item['nama_penginapan'] ?>" width="100">
+                                                        </div>
+                                                        <div class="" style="background-color: #FFF">
+                                                            <hr class="my-0 ">
+                                                            <p class="post mx-3 mt-2 mb-0 "><i class="text-primary fa-solid fa-location-dot fa-sm"></i>
+                                                                <?= $item['lokasi'] ?>
+                                                            </p>
+                                                            <h6 class="post-title mx-3 mt-2 mb-2 ">
+                                                                <?= $item['nama_penginapan'] ?>
+                                                            </h6>
+                                                            <hr class="m-0">
+                                                            <div class="row">
+                                                                <div class="col">
+                                                                    <p class="text-success ms-3 my-2 me-lg-4">Rp.
+                                                                        <?= number_format($item['price'], 0, ',', '.') ?>
+                                                                    </p>
+                                                                </div>
+                                                                <div class="col text-end me-3">
+                                                                    <i class="fa-solid fa-star fa-sm my-3  text-warning"></i>
+                                                                    <i class="fa-solid fa-star fa-sm my-3  text-warning"></i>
+                                                                    <i class="fa-solid fa-star fa-sm my-3  text-warning"></i>
+                                                                    <i class="fa-solid fa-star fa-sm my-3  text-warning"></i>
+                                                                    <i class="fa-solid fa-star fa-sm my-3  text-warning"></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            <?php endforeach; ?>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+
+
+
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -203,12 +318,11 @@
             </div>
         </div>
         <div class="row justify-content-center">
-            <?php foreach ($hotel as $item): ?>
+            <?php foreach ($hotel as $item) : ?>
                 <div class="col-md-4 mt-3 justify-content-center">
                     <div class="card shadow-sm">
                         <div class="card-body m-3 p-0 rounded">
-                            <img src="<?= base_url('assets/img/' . $item['gambar']) ?>" width="100%" height="200px"
-                                alt="<?= $item['nama_penginapan'] ?>" width="100">
+                            <img src="<?= base_url('assets/img/' . $item['gambar']) ?>" width="100%" height="200px" alt="<?= $item['nama_penginapan'] ?>" width="100">
                         </div>
                         <div class="" style="background-color: #FFF">
                             <hr class="my-0 ">
@@ -218,9 +332,6 @@
                             <h6 class="post-title mx-3 mt-2 mb-2 ">
                                 <?= $item['nama_penginapan'] ?>
                             </h6>
-                            <p>
-                                <?= $item['deskripsi'] ?>
-                            </p>
                             <hr class="m-0">
                             <div class="row">
                                 <div class="col">
@@ -253,12 +364,11 @@
             </div>
         </div>
         <div class="row justify-content-center">
-            <?php foreach ($transport as $item): ?>
+            <?php foreach ($transport as $item) : ?>
                 <div class="col-md-4 mt-3 justify-content-center">
                     <div class="card shadow-sm">
                         <div class="card-body m-3 p-0 rounded">
-                            <img src="<?= base_url('assets/img/' . $item['gambar']) ?>" width="100%" height="200px"
-                                alt="<?= $item['nama_bis'] ?>" width="100">
+                            <img src="<?= base_url('assets/img/' . $item['gambar']) ?>" width="100%" height="200px" alt="<?= $item['nama_bis'] ?>" width="100">
                         </div>
                         <div class="" style="background-color: #FFF">
                             <hr class="my-0 ">
@@ -269,9 +379,6 @@
                             <h6 class="post-title mx-3 mt-2 mb-2 ">
                                 <?= $item['nama_bis'] ?>
                             </h6>
-                            <p>
-                                <?= $item['fasilitas'] ?>
-                            </p>
                             <hr class="m-0">
                             <div class="row">
                                 <div class="col">
@@ -300,7 +407,11 @@
             <?= date('Y') ?>
         </div>
     </footer>
+
     <script src="js/scripts.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js" crossorigin="anonymous"></script>
     <script>
         // script.js
         window.addEventListener('DOMContentLoaded', () => {
@@ -308,7 +419,7 @@
             const mainNav = document.getElementById('mainNav');
             const headerHeight = mainNav.clientHeight;
 
-            window.addEventListener('scroll', function () {
+            window.addEventListener('scroll', function() {
                 const currentTop = document.body.getBoundingClientRect().top * -1;
 
                 if (currentTop < scrollPos) {
@@ -329,7 +440,6 @@
                 scrollPos = currentTop;
             });
         });
-
     </script>
 </body>
 
