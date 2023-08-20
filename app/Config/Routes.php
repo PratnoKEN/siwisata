@@ -42,11 +42,15 @@ $routes->get('delete-produk/(:segment)', 'Admin\ProdukController::delete/$1');
 
 // routes hotel
 $routes->get('daftar-hotel', 'Admin\HotelController::index');
-$routes->get('tambah-hotel', 'Admin\HotelController::add');
+$routes->match(['get', 'post'], 'tambah-hotel', 'Admin\HotelController::add');
+$routes->match(['get', 'post'], 'edit-hotel/(:num)', 'Admin\HotelController::edit/$1');
+$routes->get('delete-hotel/(:segment)', 'Admin\HotelController::delete/$1');
 
 // routes transportasi
 $routes->get('daftar-transportasi', 'Admin\TransportasiController::index');
-$routes->get('tambah-transportasi', 'Admin\TransportasiController::add');
+$routes->match(['get', 'post'], 'tambah-transportasi', 'Admin\TransportasiController::add');
+$routes->match(['get', 'post'], 'edit-transportasi/(:num)', 'Admin\TransportasiController::edit/$1');
+$routes->get('delete-transportasi/(:segment)', 'Admin\TransportasiController::delete/$1');
 
 // Change the route definition to accept both GET and POST requests
 $routes->match(['get', 'post'], 'login', 'Admin\Auth::login');
