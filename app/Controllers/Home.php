@@ -2,11 +2,26 @@
 
 namespace App\Controllers;
 
+use App\Controllers\BaseController;
+use App\Models\HotelModel;
+use App\Models\ProdukModel;
+use App\Models\TransportasiModel;
+
 class Home extends BaseController
 {
-    public function index(): string
+    public function index()
     {
-        return view('welcome_message');
-        //return view('welcome');
+
+        $produkModel = new ProdukModel();
+        $HotelModel = new HotelModel();
+        $TransportasiModel = new TransportasiModel();
+
+        $data = [
+            'title' => 'Daftar Produk',
+            'produk' => $produkModel->getAllProduk(),
+            'hotel' => $HotelModel->getAllHotel(),
+            'transport' => $TransportasiModel->getAllTransportasi(),
+        ];
+        return view('welcome_message', $data);
     }
 }
