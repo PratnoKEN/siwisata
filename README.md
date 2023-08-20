@@ -10,9 +10,6 @@
 - 202011420047 Verdi Tri Firmansyah
 - 202011420064 Gyvanda Suko Nur Arafka
 
-### WEB URL
-[http://localhost:8080/dashboard](http://localhost:8080/dashboard)
-
 ### DEMO VIDEO
 https://github.com/PratnoKEN/siwisata/assets/62471250/0f13fca4-54a8-4c82-9956-69eb50ddf6ca
 

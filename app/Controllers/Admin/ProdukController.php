@@ -25,7 +25,6 @@ class ProdukController extends BaseController
 
     public function add()
     {
-        // Check if user is logged in
         if (!session()->get('logged_in')) {
             // Redirect to the login page if not logged in
             return redirect()->to('/login');
@@ -44,6 +43,14 @@ class ProdukController extends BaseController
                 'gambar' => $this->request->getPost('gambar'),
                 // You'll need to process the image upload here and store its path
             ];
+            // Handle file upload
+            $imageFile = $this->request->getFile('gambar_wisata');
+            if ($imageFile->isValid() && !$imageFile->hasMoved()) {
+                $newImageName = $imageFile->getRandomName();
+                $imageFile->move('./assets/img', $newImageName);
+
+                $data['gambar'] = $newImageName;
+            }
             // Insert data into the database
             $produkModel->insert($data);
 
