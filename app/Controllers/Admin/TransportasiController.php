@@ -92,7 +92,7 @@ class TransportasiController extends BaseController
                 $data['gambar'] = $newImageName;
             }
 
-            $TransportasiModel->update($data);
+            $TransportasiModel->update($id, $data);
 
             return redirect()->to('/daftar-transportasi')->with('success', 'Data berhasil diperbarui');
         }
