@@ -49,16 +49,36 @@
                         <?php if (session('level') === 'admin'): ?>
                             <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4"
                                     href="<?= base_url('dashboard'); ?>">Dashboard</a></li>
+                            <li class="nav-item dropdown mt-3">
+                                <a class="nav-link dropdown-toggle align-top" href="#" id="navbarDropdown" role="button"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="fas fa-user"></i> Admin,
+                                    <?php if (session()->has('username')): ?>
+                                        <?= session('username') ?>
+                                    <?php endif; ?>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="<?= base_url('logout'); ?>">Logout</a>
+                                </div>
+                            </li>
                         <?php endif; ?>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle align-top" href="#" id="navbarDropdown" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="fas fa-user"></i>
-                            </a>
-                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="<?= base_url('logout'); ?>">Logout</a>
-                            </div>
-                        </li>
+                        <?php if (session('level') === 'user'): ?>
+                            <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4"
+                                    href="<?= base_url('dashboard-user'); ?>">Dashboard</a></li>
+                            <li class="nav-item dropdown mt-3">
+                                <a class="nav-link dropdown-toggle align-top" href="#" id="navbarDropdown" role="button"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="fas fa-user"></i> Halo,
+                                    <?php if (session()->has('username')): ?>
+                                        <?= session('username') ?>
+                                    <?php endif; ?>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="<?= base_url('logout'); ?>">Logout</a>
+                                </div>
+                            </li>
+                        <?php endif; ?>
+
                     <?php else: ?>
                         <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4"
                                 href="<?= base_url('login'); ?>">Login</a></li>

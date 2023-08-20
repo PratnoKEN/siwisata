@@ -56,6 +56,9 @@ $routes->get('delete-transportasi/(:segment)', 'Admin\TransportasiController::de
 $routes->match(['get', 'post'], 'login', 'Admin\Auth::login');
 $routes->get('logout', 'Admin\Auth::logout');
 
+$routes->get('dashboard-user', 'User\DashboardController::index');
+$routes->get('daftar-booking-user', 'User\BookingController::index');
+
 /*
  * --------------------------------------------------------------------
  * Additional Routing
