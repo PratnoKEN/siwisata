@@ -34,6 +34,10 @@ $routes->get('/', 'Home::index');
 // routes admin
 $routes->get('dashboard', 'Admin\DashboardController::index');
 
+//routes user
+$routes->get('dashboard-user', 'User\DashboardController::index');
+$routes->get('daftar-booking-user', 'User\BookingController::index');
+
 // routes produk
 $routes->get('daftar-produk', 'Admin\ProdukController::index');
 $routes->match(['get', 'post'], 'tambah-produk', 'Admin\ProdukController::add');
@@ -55,9 +59,6 @@ $routes->get('delete-transportasi/(:segment)', 'Admin\TransportasiController::de
 // Change the route definition to accept both GET and POST requests
 $routes->match(['get', 'post'], 'login', 'Admin\Auth::login');
 $routes->get('logout', 'Admin\Auth::logout');
-
-$routes->get('dashboard-user', 'User\DashboardController::index');
-$routes->get('daftar-booking-user', 'User\BookingController::index');
 
 /*
  * --------------------------------------------------------------------
