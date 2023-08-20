@@ -18,7 +18,9 @@
                                     <p>Data Wisata</p>
                                 </div>
                                 <div class="text-end col-md-3">
-                                    <h2>12</h2>
+                                    <h2>
+                                        <?= $wisataCount ?>
+                                    </h2>
                                 </div>
                             </div>
                         </div>
@@ -37,7 +39,8 @@
                                     <p>Data Penginapan</p>
                                 </div>
                                 <div class="text-end col-md-3">
-                                    <h2>7</h2>
+                                    <h2>
+                                        <?= $HotelCount ?>
                                 </div>
                             </div>
                         </div>
@@ -56,12 +59,15 @@
                                     <p>Data Transportasi</p>
                                 </div>
                                 <div class="text-end col-md-3">
-                                    <h2>5</h2>
+                                    <h2>
+                                        <?= $transportasiCount ?>
                                 </div>
                             </div>
                         </div>
                         <div class="card-footer d-flex align-items-center justify-content-between">
-                            <a class="small text-white stretched-link" href="#">View Details</a>
+                            <a class="small text-white stretched-link"
+                                href="<?= base_url('daftar-transportasi'); ?>">View
+                                Details</a>
                             <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                         </div>
                     </div>
@@ -71,7 +77,7 @@
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-md-9 mt-2">
-                                    <p>Data Bookings</p>
+                                    <p>Data Pesanan</p>
                                 </div>
                                 <div class="text-end col-md-3">
                                     <h2>3</h2>

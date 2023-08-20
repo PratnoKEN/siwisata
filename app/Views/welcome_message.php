@@ -11,9 +11,19 @@
     <!-- Font Awesome icons (free version)-->
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
     <!-- Google fonts-->
-    <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet"
+        type="text/css" />
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800"
+        rel="stylesheet" type="text/css" />
     <!-- Core theme CSS (includes Bootstrap)-->
+    <!-- Link to Bootstrap JS and jQuery (required for Bootstrap components) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
     <link href="css/styles.css" rel="stylesheet" />
     <style>
         .card {
@@ -27,7 +37,8 @@
     <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
         <div class="container px-4 px-lg-5">
             <a class="navbar-brand" href="<?= base_url('/'); ?>">Pariwisata</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 Menu
                 <i class="fas fa-bars"></i>
             </button>
@@ -39,11 +50,29 @@
                     <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="#penginapan">Penginapan</a></li>
                     <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="#transportasi">Transportasi</a>
                     </li>
-                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="<?= base_url('login'); ?>">Login</a></li>
+                    <?php if (session()->get('logged_in')): ?>
+                        <?php if (session('level') === 'admin'): ?>
+                            <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4"
+                                    href="<?= base_url('dashboard'); ?>">Dashboard</a></li>
+                        <?php endif; ?>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle align-top" href="#" id="navbarDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-user"></i>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="<?= base_url('logout'); ?>">Logout</a>
+                            </div>
+                        </li>
+                    <?php else: ?>
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4"
+                                href="<?= base_url('login'); ?>">Login</a></li>
+                    <?php endif; ?>
                 </ul>
             </div>
         </div>
     </nav>
+
     <!-- Page Header-->
     <header class="masthead" style="background-image: url('assets/img/j3.jpg')">
         <div class="container position-relative px-4 px-lg-5">
@@ -116,14 +145,15 @@
     <div class="container px-4 px-lg-5">
         <div class="row text-center">
             <div class="col">
-                <h3>Destinasi Wisata</h1>
+                <h3 id="wisata">Destinasi Wisata</h1>
             </div>
         </div>
         <div class="row justify-content-center">
             <div class="col-md-4 mt-3 justify-content-center">
                 <div class="card shadow-sm">
                     <div class="card-body m-3 p-0 rounded">
-                        <img src="<?php echo base_url() . '/assets/img/j1.jpg' ?>" width="100%" height="200px" alt="thumbnail">
+                        <img src="<?php echo base_url() . '/assets/img/j1.jpg' ?>" width="100%" height="200px"
+                            alt="thumbnail">
                     </div>
                     <div class="" style="background-color: #FFF">
                         <hr class="my-0 ">
@@ -149,7 +179,8 @@
             <div class="col-md-4 mt-3 justify-content-center">
                 <div class="card shadow-sm">
                     <div class="card-body m-3 p-0 rounded">
-                        <img src="<?php echo base_url() . '/assets/img/j2.jpg' ?>" width="100%" height="200px" alt="thumbnail">
+                        <img src="<?php echo base_url() . '/assets/img/j2.jpg' ?>" width="100%" height="200px"
+                            alt="thumbnail">
                     </div>
                     <div class="" style="background-color: #FFF">
                         <hr class="my-0 ">
@@ -176,7 +207,8 @@
             <div class="col-md-4 mt-3 justify-content-center">
                 <div class="card shadow-sm">
                     <div class="card-body m-3 p-0 rounded">
-                        <img src="<?php echo base_url() . '/assets/img/j3.jpg' ?>" width="100%" height="200px" alt="thumbnail">
+                        <img src="<?php echo base_url() . '/assets/img/j3.jpg' ?>" width="100%" height="200px"
+                            alt="thumbnail">
                     </div>
                     <div class="" style="background-color: #FFF">
                         <hr class="my-0 ">
@@ -204,7 +236,9 @@
 
         <!-- Footer-->
         <footer class="bg-white">
-            <div class="small text-center text-muted fst-italic">Copyright &copy; SI Pariwisata 2023</div>
+            <div class="small text-center text-muted fst-italic">Copyright &copy; SI Pariwisata
+                <?= date('Y') ?>
+            </div>
         </footer>
 
         <!-- Bootstrap core JS-->
@@ -212,11 +246,11 @@
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
         <script>
-            document.addEventListener("DOMContentLoaded", function() {
+            document.addEventListener("DOMContentLoaded", function () {
                 const ticketForm = document.getElementById("ticketForm");
                 const ticketPriceElement = document.getElementById("ticketPrice");
 
-                ticketForm.addEventListener("submit", function(event) {
+                ticketForm.addEventListener("submit", function (event) {
                     event.preventDefault();
 
                     const initialDestination = document.getElementById("initialDestination").value;
@@ -245,144 +279,144 @@
             });
         </script>
         <script>
-            document.addEventListener("DOMContentLoaded", function() {
+            document.addEventListener("DOMContentLoaded", function () {
                 const productCards = document.querySelectorAll(".card.shadow-sm");
 
                 const hotels = {
                     "Jatim Park 1": [{
-                            name: "Hotel Dewi",
-                            description: "A comfortable hotel near Jatim Park 1",
-                            price: "Rp. 250,000",
-                            specifications: "WiFi, Breakfast, Parking",
-                            image: "oyo"
-                        },
-                        {
-                            name: "OYO 3398 Griya RM 19",
-                            description: "Affordable accommodation with great service",
-                            price: "Rp. 150,000",
-                            specifications: "WiFi, Air Conditioning",
-                            image: "oyo"
-                        },
-                        {
-                            name: "OYO 2042 Zam Zam Family Syariah",
-                            description: "Family-friendly hotel with a peaceful atmosphere",
-                            price: "Rp. 180,000",
-                            specifications: "WiFi, Family Rooms",
-                            image: "oyo"
-                        }
+                        name: "Hotel Dewi",
+                        description: "A comfortable hotel near Jatim Park 1",
+                        price: "Rp. 250,000",
+                        specifications: "WiFi, Breakfast, Parking",
+                        image: "oyo"
+                    },
+                    {
+                        name: "OYO 3398 Griya RM 19",
+                        description: "Affordable accommodation with great service",
+                        price: "Rp. 150,000",
+                        specifications: "WiFi, Air Conditioning",
+                        image: "oyo"
+                    },
+                    {
+                        name: "OYO 2042 Zam Zam Family Syariah",
+                        description: "Family-friendly hotel with a peaceful atmosphere",
+                        price: "Rp. 180,000",
+                        specifications: "WiFi, Family Rooms",
+                        image: "oyo"
+                    }
                     ],
                     "Jatim Park 2": [{
-                            name: "RedDoorz near Eco Green Park Batu",
-                            description: "Conveniently located near Jatim Park 2",
-                            price: "Rp. 300,000",
-                            specifications: "WiFi, Swimming Pool",
-                            image: "oyo"
-                        },
-                        {
-                            name: "GUEST HOUSE PALEM ASRI",
-                            description: "Homestay with a natural atmosphere",
-                            price: "Rp. 200,000",
-                            specifications: "Garden, Parking",
-                            image: "oyo"
-                        },
-                        {
-                            name: "Griya Sumber Rejeki Homestay",
-                            description: "Cozy homestay with friendly hosts",
-                            price: "Rp. 180,000",
-                            specifications: "WiFi, Terrace",
-                            image: "oyo"
-                        }
+                        name: "RedDoorz near Eco Green Park Batu",
+                        description: "Conveniently located near Jatim Park 2",
+                        price: "Rp. 300,000",
+                        specifications: "WiFi, Swimming Pool",
+                        image: "oyo"
+                    },
+                    {
+                        name: "GUEST HOUSE PALEM ASRI",
+                        description: "Homestay with a natural atmosphere",
+                        price: "Rp. 200,000",
+                        specifications: "Garden, Parking",
+                        image: "oyo"
+                    },
+                    {
+                        name: "Griya Sumber Rejeki Homestay",
+                        description: "Cozy homestay with friendly hosts",
+                        price: "Rp. 180,000",
+                        specifications: "WiFi, Terrace",
+                        image: "oyo"
+                    }
                     ],
                     "Kebun Binatang": [{
-                            name: "Andalus Hotel",
-                            description: "Modern hotel near Kebun Binatang",
-                            price: "Rp. 300,000",
-                            specifications: "WiFi, Restaurant, Gym",
-                            image: "oyo"
-                        },
-                        {
-                            name: "SPOT ON 90403 Gosepa Ngagel",
-                            description: "Budget-friendly accommodation",
-                            price: "Rp. 150,000",
-                            specifications: "WiFi, Air Conditioning",
-                            image: "oyo2"
-                        },
-                        {
-                            name: "style50 homestay",
-                            description: "Homestay with a stylish touch",
-                            price: "Rp. 220,000",
-                            specifications: "WiFi, Terrace",
-                            image: "oyo"
-                        }
+                        name: "Andalus Hotel",
+                        description: "Modern hotel near Kebun Binatang",
+                        price: "Rp. 300,000",
+                        specifications: "WiFi, Restaurant, Gym",
+                        image: "oyo"
+                    },
+                    {
+                        name: "SPOT ON 90403 Gosepa Ngagel",
+                        description: "Budget-friendly accommodation",
+                        price: "Rp. 150,000",
+                        specifications: "WiFi, Air Conditioning",
+                        image: "oyo2"
+                    },
+                    {
+                        name: "style50 homestay",
+                        description: "Homestay with a stylish touch",
+                        price: "Rp. 220,000",
+                        specifications: "WiFi, Terrace",
+                        image: "oyo"
+                    }
                     ]
                 };
 
                 const biss = {
                     "Jatim Park 1": [{
-                            name: "Bus Gandeng Scania",
-                            description: "Bus yang melayani rute antarkota di Indonesia, khususnya di Malang",
-                            price: "Rp. 250,000",
-                            specifications: "AC, Tempat duduk yang nyaman, Layar hiburan",
-                            image: "b1"
-                        },
-                        {
-                            name: "Bus Hino",
-                            description: "Bus yang melayani rute antarkota di Indonesia, khususnya di Malang",
-                            price: "Rp. 150,000",
-                            specifications: "WiFi, AC, Tempat duduk yang nyaman, Layar hiburan",
-                            image: "b2"
-                        },
-                        {
-                            name: "Bus Mercedez-Ben",
-                            description: "Bus yang melayani rute antarkota di Indonesia, khususnya di Malang",
-                            price: "Rp. 180,000",
-                            specifications: "WiFi, AC, Tempat duduk yang nyaman, Layar hiburan",
-                            image: "b3"
-                        }
+                        name: "Bus Gandeng Scania",
+                        description: "Bus yang melayani rute antarkota di Indonesia, khususnya di Malang",
+                        price: "Rp. 250,000",
+                        specifications: "AC, Tempat duduk yang nyaman, Layar hiburan",
+                        image: "b1"
+                    },
+                    {
+                        name: "Bus Hino",
+                        description: "Bus yang melayani rute antarkota di Indonesia, khususnya di Malang",
+                        price: "Rp. 150,000",
+                        specifications: "WiFi, AC, Tempat duduk yang nyaman, Layar hiburan",
+                        image: "b2"
+                    },
+                    {
+                        name: "Bus Mercedez-Ben",
+                        description: "Bus yang melayani rute antarkota di Indonesia, khususnya di Malang",
+                        price: "Rp. 180,000",
+                        specifications: "WiFi, AC, Tempat duduk yang nyaman, Layar hiburan",
+                        image: "b3"
+                    }
                     ],
                     "Jatim Park 2": [{
-                            name: "Bus Sinar Jaya",
-                            description: "Bus yang melayani rute antarkota di Indonesia, khususnya di Malang",
-                            price: "Rp. 300,000",
-                            specifications: "WiFi, AC, Tempat duduk yang nyaman, Layar hiburan",
-                            image: "b1"
-                        },
-                        {
-                            name: "Bus Haryanto",
-                            description: "Bus yang melayani rute antarkota di Indonesia, khususnya di Malang",
-                            price: "Rp. 200,000",
-                            specifications: "AC, Tempat duduk yang nyaman, Layar hiburan",
-                            image: "b2"
-                        },
-                        {
-                            name: "Bus Damri",
-                            description: "Bus yang melayani rute antarkota di Indonesia, khususnya di Malang",
-                            price: "Rp. 180,000",
-                            specifications: "WiFi, AC, Tempat duduk yang nyaman, Layar hiburan",
-                            image: "b2"
-                        }
+                        name: "Bus Sinar Jaya",
+                        description: "Bus yang melayani rute antarkota di Indonesia, khususnya di Malang",
+                        price: "Rp. 300,000",
+                        specifications: "WiFi, AC, Tempat duduk yang nyaman, Layar hiburan",
+                        image: "b1"
+                    },
+                    {
+                        name: "Bus Haryanto",
+                        description: "Bus yang melayani rute antarkota di Indonesia, khususnya di Malang",
+                        price: "Rp. 200,000",
+                        specifications: "AC, Tempat duduk yang nyaman, Layar hiburan",
+                        image: "b2"
+                    },
+                    {
+                        name: "Bus Damri",
+                        description: "Bus yang melayani rute antarkota di Indonesia, khususnya di Malang",
+                        price: "Rp. 180,000",
+                        specifications: "WiFi, AC, Tempat duduk yang nyaman, Layar hiburan",
+                        image: "b2"
+                    }
                     ],
                     "Kebun Binatang": [{
-                            name: "Bus Mayasari Bakti",
-                            description: "Bus yang melayani rute antarkota di Indonesia, khususnya di Surabaya",
-                            price: "Rp. 300,000",
-                            specifications: "AC, Tempat duduk yang nyaman, Layar hiburan",
-                            image: "b1"
-                        },
-                        {
-                            name: "Bus Pahala Kencana",
-                            description: "Bus yang melayani rute antarkota di Indonesia, khususnya di Surabaya",
-                            price: "Rp. 150,000",
-                            specifications: "AC, Tempat duduk yang nyaman, Layar hiburan",
-                            image: "b2"
-                        },
-                        {
-                            name: "Bus Putra Pelangi",
-                            description: "Bus yang melayani rute antarkota di Indonesia, khususnya di Surabaya",
-                            price: "Rp. 220,000",
-                            specifications: "AC, Tempat duduk yang ergonomis, Hiburan, Colokan listrik.",
-                            image: "b3"
-                        }
+                        name: "Bus Mayasari Bakti",
+                        description: "Bus yang melayani rute antarkota di Indonesia, khususnya di Surabaya",
+                        price: "Rp. 300,000",
+                        specifications: "AC, Tempat duduk yang nyaman, Layar hiburan",
+                        image: "b1"
+                    },
+                    {
+                        name: "Bus Pahala Kencana",
+                        description: "Bus yang melayani rute antarkota di Indonesia, khususnya di Surabaya",
+                        price: "Rp. 150,000",
+                        specifications: "AC, Tempat duduk yang nyaman, Layar hiburan",
+                        image: "b2"
+                    },
+                    {
+                        name: "Bus Putra Pelangi",
+                        description: "Bus yang melayani rute antarkota di Indonesia, khususnya di Surabaya",
+                        price: "Rp. 220,000",
+                        specifications: "AC, Tempat duduk yang ergonomis, Hiburan, Colokan listrik.",
+                        image: "b3"
+                    }
                     ]
                 };
 

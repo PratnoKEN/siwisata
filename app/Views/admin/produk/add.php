@@ -11,7 +11,7 @@
                     Tambah Destinasi Wisata
                     <ol class="breadcrumb mb-4">
                         <li class="breadcrumb-item"><a href="<?= base_url('dashboard'); ?>">Dashboard</a></li>
-                        <li class="breadcrumb-item active">Static Navigation</li>
+                        <li class="breadcrumb-item active">Tambah Destinasi Wisata</li>
                     </ol>
                 </div>
                 <div class="card-body">
